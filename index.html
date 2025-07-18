@@ -8,11 +8,11 @@
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f3ef; /* Beige clair */
+            background: #f5f3ef;
             color: #333;
         }
         header {
-            background: #0d1a2b; /* Bleu nuit */
+            background: #0d1a2b;
             color: white;
             padding: 20px;
             text-align: center;
@@ -22,7 +22,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #ff5ca2; /* Fushia */
+            border: 4px solid #ff5ca2;
             margin: 20px auto;
             display: block;
         }
@@ -39,6 +39,7 @@
             border-left: 5px solid #ff5ca2;
             padding-left: 10px;
             margin-top: 0;
+            cursor: pointer;
         }
         ul {
             padding: 0;
@@ -56,6 +57,33 @@
             color: white;
             margin-top: 20px;
         }
+        .contact-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .contact-buttons a {
+            text-decoration: none;
+            color: white;
+            background: #ff5ca2;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s ease;
+        }
+        .contact-buttons a:hover {
+            background: #cc4a86;
+        }
+        .contact-buttons img {
+            width: 20px;
+            height: 20px;
+        }
+        .collapsible-content {
+            display: none;
+            padding: 10px 0;
+        }
         @media(max-width: 600px) {
             section {
                 margin: 10px;
@@ -66,67 +94,103 @@
 <body>
     <header>
         <h1>Soamasy Marie Anna Roddie</h1>
-        <p>AD 13 ter G Ambohitrarahaba | 0326314949 | marieannasoamasy@gmail.com</p>
+        <p>AD 13 ter G Ambohitrarahaba</p>
         <img src="photo.jpeg" alt="Photo de Soamasy" class="photo">
+        <div class="contact-buttons">
+            <a href="tel:+261326314949">
+                <img src="phone-icon.png" alt="Téléphone"> Appeler
+            </a>
+            <a href="https://wa.me/261326314949" target="_blank">
+                <img src="whatsapp-icon.png" alt="WhatsApp"> WhatsApp
+            </a>
+            <a href="mailto:marieannasoamasy@gmail.com">
+                <img src="gmail-icon.png" alt="Gmail"> Email
+            </a>
+        </div>
     </header>
 
     <section>
-        <h2>Objectif</h2>
-        <p>Je cherche un poste de téléconseillère ou postes similaires pour mettre en avant mes compétences et ma spécialité concernant le service client. Exceller dans le domaine et contribuer à la bonne réputation de l’entreprise est mon objectif.</p>
+        <h2 onclick="toggleContent(this)">Objectif</h2>
+        <div class="collapsible-content">
+            <p>Je cherche un poste de téléconseillère ou postes similaires pour mettre en avant mes compétences et ma spécialité concernant le service client. Exceller dans le domaine et contribuer à la bonne réputation de l’entreprise est mon objectif.</p>
+        </div>
     </section>
 
     <section>
-        <h2>Expérience Professionnelle</h2>
-        <ul>
-            <li>Agence Capsule – Agent enquêteur</li>
-            <li>Ariane Études – Enquêtrice par téléphone</li>
-            <li>Restaurant familial – Serveuse</li>
-        </ul>
+        <h2 onclick="toggleContent(this)">Expérience Professionnelle</h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Agence Capsule – Agent enquêteur</li>
+                <li>Ariane Études – Enquêtrice par téléphone</li>
+                <li>Restaurant familial – Serveuse</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Éducation</h2>
-        <ul>
-            <li>Baccalauréat série A – 2019</li>
-            <li>Université d’Antananarivo – Bacc +2 (2024)</li>
-        </ul>
+        <h2 onclick="toggleContent(this)">Éducation</h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Baccalauréat série A – 2019</li>
+                <li>Université d’Antananarivo – Bacc +2 (2024)</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Compétences</h2>
-        <ul>
-            <li>Gestion de tâches</li>
-            <li>Résolution de problèmes</li>
-            <li>Orientation et suivi</li>
-        </ul>
+        <h2 onclick="toggleContent(this)">Compétences</h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Gestion de tâches</li>
+                <li>Résolution de problèmes</li>
+                <li>Orientation et suivi</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Atouts</h2>
-        <ul>
-            <li>Grande disponibilité</li>
-            <li>Habite à proximité des lieux</li>
-        </ul>
+        <h2 onclick="toggleContent(this)">Atouts</h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Grande disponibilité</li>
+                <li>Habite à proximité des lieux</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Skills</h2>
-        <ul>
-            <li>Dynamique et ténacité</li>
-            <li>Sourire et sens de l’accueil</li>
-        </ul>
+        <h2 onclick="toggleContent(this)">Skills</h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Dynamique et ténacité</li>
+                <li>Sourire et sens de l’accueil</li>
+            </ul>
+        </div>
     </section>
 
     <section>
-        <h2>Langues</h2>
-        <ul>
-            <li>Français</li>
-            <li>Anglais moyen</li>
-        </ul>
+        <h2 onclick="toggleContent(this)">Langues</h2>
+        <div class="collapsible-content">
+            <ul>
+                <li>Français</li>
+                <li>Anglais moyen</li>
+            </ul>
+        </div>
     </section>
 
     <footer>
         &copy; 2025 Soamasy Marie Anna Roddie – Portfolio réalisé avec soin.
     </footer>
+
+    <script>
+        function toggleContent(element) {
+            const content = element.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
 </body>
 </html>
