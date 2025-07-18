@@ -12,7 +12,7 @@
             color: #333;
         }
         header {
-            background: #0d1a2b;
+            background: linear-gradient(135deg, #0d1a2b, #1f2e45);
             color: white;
             padding: 20px;
             text-align: center;
@@ -32,7 +32,12 @@
             background: white;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
         h2 {
             color: #0d1a2b;
@@ -71,14 +76,14 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease, transform 0.2s ease;
         }
         .contact-buttons a:hover {
             background: #cc4a86;
+            transform: scale(1.05);
         }
-        .contact-buttons img {
-            width: 20px;
-            height: 20px;
+        .contact-buttons a span {
+            font-size: 1.2em;
         }
         .collapsible-content {
             display: none;
@@ -112,7 +117,7 @@
     <section>
         <h2 onclick="toggleContent(this)">Objectif</h2>
         <div class="collapsible-content">
-            <p>Je cherche un poste de téléconseillère ou postes similaires pour mettre en avant mes compétences et ma spécialité concernant le service client. Exceller dans le domaine et contribuer à la bonne réputation de l’entreprise est mon objectif.</p>
+            <p>Passionnée par la relation client et l’accompagnement personnalisé, je souhaite intégrer une entreprise où je pourrai valoriser mes compétences en communication et ma rigueur professionnelle afin de garantir la satisfaction des clients et contribuer à la croissance de l’organisation.</p>
         </div>
     </section>
 
@@ -120,9 +125,9 @@
         <h2 onclick="toggleContent(this)">Expérience Professionnelle</h2>
         <div class="collapsible-content">
             <ul>
-                <li>Agence Capsule – Agent enquêteur</li>
-                <li>Ariane Études – Enquêtrice par téléphone</li>
-                <li>Restaurant familial – Serveuse</li>
+                <li><strong>Agence Capsule – Agent enquêteur :</strong> Réalisation d’enquêtes téléphoniques, collecte de données fiables, respect des scripts et gestion du rythme d’appels pour atteindre les objectifs journaliers.</li>
+                <li><strong>Ariane Études – Enquêtrice par téléphone :</strong> Analyse de la satisfaction client, capacité à adapter le discours en fonction du profil interrogé, gestion des objections et saisie informatique précise.</li>
+                <li><strong>Restaurant familial – Serveuse :</strong> Prise de commandes, accueil chaleureux, gestion de la caisse et coordination avec l’équipe en salle et en cuisine.</li>
             </ul>
         </div>
     </section>
@@ -141,9 +146,9 @@
         <h2 onclick="toggleContent(this)">Compétences</h2>
         <div class="collapsible-content">
             <ul>
-                <li>Gestion de tâches</li>
-                <li>Résolution de problèmes</li>
-                <li>Orientation et suivi</li>
+                <li><strong>Gestion de tâches :</strong> Organisation efficace du travail, priorisation des missions selon leur importance et leur urgence.</li>
+                <li><strong>Résolution de problèmes :</strong> Analyse rapide des situations, mise en place de solutions adaptées et proactivité.</li>
+                <li><strong>Orientation et suivi :</strong> Suivi rigoureux des dossiers clients, accompagnement personnalisé et fidélisation.</li>
             </ul>
         </div>
     </section>
@@ -152,8 +157,8 @@
         <h2 onclick="toggleContent(this)">Atouts</h2>
         <div class="collapsible-content">
             <ul>
-                <li>Grande disponibilité</li>
-                <li>Habite à proximité des lieux</li>
+                <li>Grande disponibilité, capacité à travailler en horaires flexibles et à répondre rapidement aux demandes.</li>
+                <li>Habite à proximité des lieux, facilitant les déplacements et la ponctualité.</li>
             </ul>
         </div>
     </section>
@@ -162,8 +167,8 @@
         <h2 onclick="toggleContent(this)">Skills</h2>
         <div class="collapsible-content">
             <ul>
-                <li>Dynamique et ténacité</li>
-                <li>Sourire et sens de l’accueil</li>
+                <li><strong>Dynamique et ténacité :</strong> Persévérance dans l’atteinte des objectifs, résistance au stress et à la pression.</li>
+                <li><strong>Sourire et sens de l’accueil :</strong> Attitude positive, facilité de contact et écoute active.</li>
             </ul>
         </div>
     </section>
@@ -172,8 +177,8 @@
         <h2 onclick="toggleContent(this)">Langues</h2>
         <div class="collapsible-content">
             <ul>
-                <li>Français</li>
-                <li>Anglais moyen</li>
+                <li>Français : Courant</li>
+                <li>Anglais : Niveau intermédiaire, lecture et compréhension satisfaisantes.</li>
             </ul>
         </div>
     </section>
