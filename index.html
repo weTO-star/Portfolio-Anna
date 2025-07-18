@@ -7,60 +7,77 @@
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f3ef;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #f5f3ef, #fafafa);
             color: #333;
         }
         header {
             background: linear-gradient(135deg, #0d1a2b, #1f2e45);
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
         .photo {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #ff5ca2;
+            border: 6px solid #ff5ca2;
             margin: 20px auto;
             display: block;
+            transition: transform 0.3s ease;
+        }
+        .photo:hover {
+            transform: scale(1.05);
         }
         section {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 30px auto;
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
         }
         h2 {
             color: #0d1a2b;
-            border-left: 5px solid #ff5ca2;
-            padding-left: 10px;
+            border-left: 6px solid #ff5ca2;
+            padding-left: 12px;
             margin-top: 0;
             cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        h2:hover {
+            color: #ff5ca2;
         }
         ul {
             padding: 0;
             list-style: none;
         }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
         ul li::before {
-            content: '•';
+            content: '\2022';
             color: #ff5ca2;
-            margin-right: 8px;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background: #0d1a2b;
             color: white;
             margin-top: 20px;
+            box-shadow: 0 -8px 16px rgba(0,0,0,0.2);
         }
         .contact-buttons {
             text-align: center;
@@ -70,12 +87,14 @@
             text-decoration: none;
             color: white;
             background: #ff5ca2;
-            padding: 12px 20px;
-            margin: 5px;
-            border-radius: 8px;
+            padding: 14px 24px;
+            margin: 8px;
+            border-radius: 10px;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
             transition: background 0.3s ease, transform 0.2s ease;
         }
         .contact-buttons a:hover {
@@ -83,15 +102,16 @@
             transform: scale(1.05);
         }
         .contact-buttons a span {
-            font-size: 1.2em;
+            font-size: 1.4em;
         }
         .collapsible-content {
             display: none;
-            padding: 10px 0;
+            padding: 15px 0;
+            transition: all 0.3s ease;
         }
         @media(max-width: 600px) {
             section {
-                margin: 10px;
+                margin: 15px;
             }
         }
     </style>
@@ -125,9 +145,9 @@
         <h2 onclick="toggleContent(this)">Expérience Professionnelle</h2>
         <div class="collapsible-content">
             <ul>
-                <li><strong>Agence Capsule – Agent enquêteur :</strong> Réalisation d’enquêtes téléphoniques, collecte de données fiables, respect des scripts et gestion du rythme d’appels pour atteindre les objectifs journaliers.</li>
-                <li><strong>Ariane Études – Enquêtrice par téléphone :</strong> Analyse de la satisfaction client, capacité à adapter le discours en fonction du profil interrogé, gestion des objections et saisie informatique précise.</li>
-                <li><strong>Restaurant familial – Serveuse :</strong> Prise de commandes, accueil chaleureux, gestion de la caisse et coordination avec l’équipe en salle et en cuisine.</li>
+                <li><strong>Agence Capsule – Agent enquêteur :</strong> Réalisation d’enquêtes téléphoniques avec des scripts personnalisés, collecte de données fiables et gestion efficace du volume d’appels pour respecter les objectifs quotidiens.</li>
+                <li><strong>Ariane Études – Enquêtrice par téléphone :</strong> Analyse de la satisfaction client, capacité d’adaptation du discours selon le profil du répondant, gestion des objections avec tact et professionnalisme.</li>
+                <li><strong>Restaurant familial – Serveuse :</strong> Accueil client avec sourire, gestion des commandes, encaissement et coordination avec l’équipe pour un service optimal.</li>
             </ul>
         </div>
     </section>
@@ -146,9 +166,9 @@
         <h2 onclick="toggleContent(this)">Compétences</h2>
         <div class="collapsible-content">
             <ul>
-                <li><strong>Gestion de tâches :</strong> Organisation efficace du travail, priorisation des missions selon leur importance et leur urgence.</li>
-                <li><strong>Résolution de problèmes :</strong> Analyse rapide des situations, mise en place de solutions adaptées et proactivité.</li>
-                <li><strong>Orientation et suivi :</strong> Suivi rigoureux des dossiers clients, accompagnement personnalisé et fidélisation.</li>
+                <li><strong>Gestion de tâches :</strong> Organisation précise des priorités, planification hebdomadaire des actions et suivi des échéances avec rigueur.</li>
+                <li><strong>Résolution de problèmes :</strong> Approche proactive face aux imprévus, prise de décisions rapides et efficaces pour garantir la continuité du service.</li>
+                <li><strong>Orientation et suivi :</strong> Mise en place de tableaux de bord pour le suivi client, relances et fidélisation sur le long terme.</li>
             </ul>
         </div>
     </section>
@@ -157,8 +177,8 @@
         <h2 onclick="toggleContent(this)">Atouts</h2>
         <div class="collapsible-content">
             <ul>
-                <li>Grande disponibilité, capacité à travailler en horaires flexibles et à répondre rapidement aux demandes.</li>
-                <li>Habite à proximité des lieux, facilitant les déplacements et la ponctualité.</li>
+                <li>Grande disponibilité et flexibilité horaire, capacité à gérer des situations d’urgence avec calme et efficacité.</li>
+                <li>Habite à proximité, facilitant la réactivité et la ponctualité sans contrainte logistique.</li>
             </ul>
         </div>
     </section>
@@ -167,8 +187,8 @@
         <h2 onclick="toggleContent(this)">Skills</h2>
         <div class="collapsible-content">
             <ul>
-                <li><strong>Dynamique et ténacité :</strong> Persévérance dans l’atteinte des objectifs, résistance au stress et à la pression.</li>
-                <li><strong>Sourire et sens de l’accueil :</strong> Attitude positive, facilité de contact et écoute active.</li>
+                <li><strong>Dynamique et ténacité :</strong> Motivation constante pour atteindre les objectifs fixés, engagement personnel et rigueur professionnelle.</li>
+                <li><strong>Sourire et sens de l’accueil :</strong> Qualité d’écoute, patience et aptitude à créer une ambiance conviviale et rassurante.</li>
             </ul>
         </div>
     </section>
@@ -178,7 +198,7 @@
         <div class="collapsible-content">
             <ul>
                 <li>Français : Courant</li>
-                <li>Anglais : Niveau intermédiaire, lecture et compréhension satisfaisantes.</li>
+                <li>Anglais : Niveau intermédiaire, avec une capacité de compréhension écrite et orale satisfaisante.</li>
             </ul>
         </div>
     </section>
