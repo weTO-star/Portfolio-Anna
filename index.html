@@ -3,217 +3,1339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Soamasy Marie Anna</title>
+    <title>Wells Yéé Doc Todison | Assistant Admin & Commercial Digital</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
             margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #f5f3ef, #fafafa);
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
         }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animations Keyframes */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blinkCursor {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--accent); }
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, #0d1a2b, #1f2e45);
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            padding: 40px 20px;
+            padding: 5rem 0 8rem;
             text-align: center;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
-        .photo {
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            opacity: 0.5;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid #ff5ca2;
-            margin: 20px auto;
-            display: block;
-            transition: transform 0.3s ease;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+            animation: bounceIn 1s ease, float 6s ease-in-out infinite;
+            filter: brightness(1.05) contrast(1.1);
         }
-        .photo:hover {
-            transform: scale(1.05);
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, white, #e0e7ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
-        section {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            position: relative;
+            display: inline-block;
         }
-        section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+
+        .title::after {
+            content: '|';
+            position: absolute;
+            right: -10px;
+            animation: blinkCursor 0.7s infinite;
         }
-        h2 {
-            color: #0d1a2b;
-            border-left: 6px solid #ff5ca2;
-            padding-left: 12px;
-            margin-top: 0;
+
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blinkCursor 0.7s step-end infinite;
+        }
+
+        .tagline {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 2rem;
+            animation: bounce 2s infinite;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
-        h2:hover {
-            color: #ff5ca2;
+
+        .scroll-down:hover {
+            color: var(--accent);
+            transform: translate(-50%, -5px);
         }
-        ul {
-            padding: 0;
-            list-style: none;
+
+        /* Navigation */
+        nav {
+            background-color: rgba(255,255,255,0.9);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
-        ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+        }
+
+        .nav-link {
+            margin: 0 1.5rem;
+            padding: 0.5rem 0;
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
             position: relative;
         }
-        ul li::before {
-            content: '\2022';
-            color: #ff5ca2;
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* À Propos */
+        #about {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            margin: -6rem auto 5rem;
+            position: relative;
+            z-index: 10;
+            padding: 5rem 4rem;
+            background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(255,255,255,0.9);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--dark);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(5px);
+            background-color: rgba(255,255,255,0.7);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: rgba(37, 99, 235, 0.2);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+            line-height: 1.6;
+        }
+
+        .skill-category li::before {
+            content: '▹';
             position: absolute;
             left: 0;
-            top: 0;
+            color: var(--secondary);
+            font-size: 1.2rem;
         }
+
+        /* Expérience */
+        .experience-section {
+            position: relative;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 2rem 4rem;
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+            perspective: 1000px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 0;
+            padding-left: 4rem;
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 0;
+            padding-right: 4rem;
+            animation: fadeInRight 0.8s ease-out;
+        }
+
+        .timeline-content {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            position: relative;
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            transform: rotateY(10deg);
+            opacity: 0;
+        }
+
+        .timeline-item.visible .timeline-content {
+            transform: rotateY(0);
+            opacity: 1;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px) rotateY(0);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -47px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -47px;
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-company {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .timeline-company::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+
+        .timeline-location {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-description ul {
+            margin-top: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        .timeline-description li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .timeline-description li::before {
+            content: '•';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        /* Formations */
+        #education {
+            background-color: var(--light);
+            border-radius: 20px;
+            margin: 5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #education::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.03;
+            z-index: 0;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .education-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .education-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url('https://www.svgrepo.com/show/530110/certificate.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .education-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            background-color: rgba(37, 99, 235, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-title {
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+            position: relative;
+            z-index: 1;
+            color: var(--dark);
+        }
+
+        .education-institution {
+            color: var(--gray);
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-description {
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        /* Contact */
+        #contact {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: white;
+            text-align: center;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+            padding: 10rem 2rem 8rem;
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.svgrepo.com/show/530109/contact-mail.svg');
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            opacity: 0.05;
+        }
+
+        .contact-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, white, var(--accent));
+            border-radius: 2px;
+        }
+
+        .contact-subtitle {
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            opacity: 0.9;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            background-color: rgba(255,255,255,0.1);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-link:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .contact-icon {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 25px;
-            background: #0d1a2b;
+            padding: 3rem;
+            background-color: var(--dark);
             color: white;
-            margin-top: 20px;
-            box-shadow: 0 -8px 16px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            position: relative;
         }
-        .contact-buttons {
-            text-align: center;
-            margin-top: 20px;
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.svgrepo.com/show/530108/network.svg');
+            background-size: 30%;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.05;
         }
-        .contact-buttons a {
-            text-decoration: none;
-            color: white;
-            background: #ff5ca2;
-            padding: 14px 24px;
-            margin: 8px;
-            border-radius: 10px;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-            transition: background 0.3s ease, transform 0.2s ease;
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
-        .contact-buttons a:hover {
-            background: #cc4a86;
-            transform: scale(1.05);
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
-        .contact-buttons a span {
-            font-size: 1.4em;
+
+        @keyframes bounceIn {
+            from, 20%, 40%, 60%, 80%, to {
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(0.97, 0.97, 0.97);
+            }
+            to {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
         }
-        .collapsible-content {
-            display: none;
-            padding: 15px 0;
-            transition: all 0.3s ease;
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
         }
-        @media(max-width: 600px) {
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particles Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .timeline::before {
+                left: 40px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 30px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: 26px;
+            }
+
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 0 6rem;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .title {
+                font-size: 1.3rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            #about {
+                padding: 3rem 2rem;
+                margin: -4rem auto 3rem;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            #contact {
+                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
+                padding: 6rem 2rem 5rem;
+            }
+
+            .contact-title {
+                font-size: 2.2rem;
+            }
+
+            .contact-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .title {
+                font-size: 1.1rem;
+            }
+
+            .profile-img {
+                width: 140px;
+                height: 140px;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                margin: 0 0.8rem;
+                font-size: 0.85rem;
+            }
+
             section {
-                margin: 15px;
+                padding: 4rem 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .timeline-item {
+                padding-left: 60px;
+                padding-right: 20px;
+            }
+
+            .timeline-content {
+                padding: 1.5rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: 16px;
+                width: 25px;
+                height: 25px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Particles Background -->
+    <div class="particles" id="particles-js"></div>
+    
     <header>
-        <h1>Soamasy Marie Anna Roddie</h1>
-        <img src="photo.jpeg" alt="Photo de Soamasy" class="photo">
-        <div class="contact-buttons">
-            <a href="tel:+261326314949">
-                <span>📞</span> Appeler
-            </a>
-            <a href="https://wa.me/261326314949" target="_blank">
-                <span>💬</span> WhatsApp
-            </a>
-            <a href="mailto:marieannasoamasy@gmail.com">
-                <span>✉️</span> Email
-            </a>
+        <div class="header-content">
+            <img src="pic.png">
+            <h1>WELLS Yéé Doc TODISON</h1>
+            <p class="title typewriter">Assistant Administratif & Commercial Digital</p>
+            <p class="tagline">Expert en organisation, gestion de projets et relation client | Passionné par l'innovation digitale et l'efficacité opérationnelle</p>
+            <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-chevron-down"></i>
+            </div>
         </div>
     </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#about" class="nav-link">Profil</a>
+            <a href="#experience" class="nav-link">Expérience</a>
+            <a href="#skills" class="nav-link">Compétences</a>
+            <a href="#education" class="nav-link">Formation</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <div class="section-title">
+            <h2>Mon Profil Professionnel</h2>
+        </div>
+        <div class="about-content animate-on-scroll">
+            <div class="about-text">
+                <p>Je suis un <strong>professionnel polyvalent</strong> à l'intersection du monde administratif, commercial et digital. Avec une solide expérience en télévente B2B/B2C et une formation en droit, j'allie <strong>rigueur organisationnelle</strong> et <strong>sens du commerce</strong> dans un environnement digital.</p>
+                
+                <p>Mon expertise couvre la gestion administrative avancée, la prospection commerciale, la création de supports visuels et la maîtrise des outils digitaux pour optimiser les processus et améliorer l'expérience client.</p>
+                
+                <div class="skills-container">
+                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.1s">
+                        <h3><i class="fas fa-file-contract"></i> Gestion Administrative</h3>
+                        <ul>
+                            <li>Suivi et relance de contrats</li>
+                            <li>Gestion de documents et archivage</li>
+                            <li>Rapprochement bancaire</li>
+                            <li>Reporting et analyse de données</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.3s">
+                        <h3><i class="fas fa-chart-line"></i> Compétences Commerciales</h3>
+                        <ul>
+                            <li>Prospection B2B/B2C</li>
+                            <li>Négociation et closing</li>
+                            <li>Gestion CRM (Salesforce, HubSpot)</li>
+                            <li>Relation client & fidélisation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.5s">
+                        <h3><i class="fas fa-laptop-code"></i> Outils Digitaux</h3>
+                        <ul>
+                            <li>Suite Office 365 (avancé)</li>
+                            <li>Google Workspace</li>
+                            <li>Time Doctor (suivi du temps)</li>
+                            <li>Outils collaboratifs (Slack, Teams)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.7s">
+                        <h3><i class="fas fa-language"></i> Langues</h3>
+                        <ul>
+                            <li>Français : Courant</li>
+                            <li>Anglais : Professionnel</li>
+                            <li>Espagnol : Notions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience">
+        <div class="section-title">
+            <h2>Mon Parcours Professionnel</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Mars 2025 - Juillet 2025</span>
+                    <h3 class="timeline-company">Conseiller en Immigration</h3>
+                    <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> Mada Marketing (Vivez au Canada) - Télétravail</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Prise en charge d'appels entrants/sortants (leads qualifiés) avec un taux de conversion 20% supérieur aux objectifs</li>
+                            <li>Présentation des programmes d'immigration adaptés aux profils clients</li>
+                            <li>Collaboration avec l'équipe juridique pour validation des documents</li>
+                            <li>Suivi personnalisé des dossiers avec réduction de 15% des abandons</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Oct 2024 - Aujourd'hui</span>
+                    <h3 class="timeline-company">Commercial Indépendant</h3>
+                    <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> Freelance (Agro-business) - Antananarivo</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Prospection et négociation internationale B2B avec 5 partenariats conclus en 3 mois</li>
+                            <li>Vente de produits locaux à l'export (CA mensuel moyen: 10 000 USD)</li>
+                            <li>Gestion autonome du cycle de vente complet</li>
+                            <li>Développement d'un réseau de partenaires internationaux</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Sept - Oct 2024</span>
+                    <h3 class="timeline-company">Télévendeur</h3>
+                    <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> Eufonie - Télétravail</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Prospection téléphonique B2B/B2C avec génération de 50 leads/mois</li>
+                            <li>Création d'un portefeuille commercial de 20 clients actifs</li>
+                            <li>Taux de conversion de 10% sur les appels sortants</li>
+                            <li>Gestion des objections avec approche consultative</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-    <section>
-        <h2 onclick="toggleContent(this)">Objectif</h2>
-        <div class="collapsible-content">
-            <p>Passionnée par la relation client et l’accompagnement personnalisé, je souhaite intégrer une entreprise où je pourrai valoriser mes compétences en communication et ma rigueur professionnelle afin de garantir la satisfaction des clients et contribuer à la croissance de l’organisation.</p>
+                        <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Déc 2022 - Avr 2023</span>
+                    <h3 class="timeline-company">Télévendeur B2C</h3>
+                    <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> Teleperformance - Antananarivo</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Vente de forfaits mobiles et services (120% des objectifs)</li>
+                            <li>Techniques d'up-selling et cross-selling</li>
+                            <li>Transformation de 30% des appels en ventes additionnelles</li>
+                            <li>Fidélisation client avec réduction de 10% des réclamations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Juil - Déc 2022</span>
+                    <h3 class="timeline-company">Conseiller Technique</h3>
+                    <div class="timeline-location"><i class="fas fa-map-marker-alt"></i> Webhelp - Antananarivo</div>
+                    <div class="timeline-description">
+                        <ul>
+                            <li>Support technique (40 appels/jour, 90% de satisfaction)</li>
+                            <li>Diagnostic et résolution de problèmes complexes</li>
+                            <li>Gestion CRM et suivi des dossiers clients</li>
+                            <li>Taux de rétention client de 85%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2 onclick="toggleContent(this)">Expérience Professionnelle</h2>
-        <div class="collapsible-content">
-            <ul>
-                <li><strong>Agence Capsule – Agent enquêteur :</strong> Réalisation d’enquêtes téléphoniques avec des scripts personnalisés, collecte de données fiables et gestion efficace du volume d’appels pour respecter les objectifs quotidiens.</li>
-                <li><strong>Ariane Études – Enquêtrice par téléphone :</strong> Analyse de la satisfaction client, capacité d’adaptation du discours selon le profil du répondant, gestion des objections avec tact et professionnalisme.</li>
-                <li><strong>Restaurant familial – Serveuse :</strong> Accueil client avec sourire, gestion des commandes, encaissement et coordination avec l’équipe pour un service optimal.</li>
-            </ul>
+    <section id="skills">
+        <div class="section-title">
+            <h2>Mes Compétences Techniques</h2>
+        </div>
+        <div class="skills-container animate-on-scroll">
+            <div class="skill-category" style="animation-delay: 0.1s">
+                <h3><i class="fas fa-tools"></i> Outils Administratifs</h3>
+                <ul>
+                    <li>Gestion de contrats et documents</li>
+                    <li>Suivi et rapprochement bancaire</li>
+                    <li>Time Doctor (suivi du temps)</li>
+                    <li>Organisation d'événements</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category" style="animation-delay: 0.3s">
+                <h3><i class="fas fa-chart-pie"></i> Logiciels Maîtrisés</h3>
+                <ul>
+                    <li>Suite Microsoft Office (Expert)</li>
+                    <li>Google Workspace (Avancé)</li>
+                    <li>CRM (Salesforce, HubSpot)</li>
+                    <li>Outils de visioconférence</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category" style="animation-delay: 0.5s">
+                <h3><i class="fas fa-bullhorn"></i> Compétences Commerciales</h3>
+                <ul>
+                    <li>Prospection B2B/B2C</li>
+                    <li>Négociation et closing</li>
+                    <li>Gestion des objections</li>
+                    <li>Fidélisation client</li>
+                </ul>
+            </div>
+            
+            <div class="skill-category" style="animation-delay: 0.7s">
+                <h3><i class="fas fa-globe"></i> Langues</h3>
+                <ul>
+                    <li>Français : Langue maternelle</li>
+                    <li>Anglais : Professionnel</li>
+                    <li>Espagnol : Notions</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2 onclick="toggleContent(this)">Éducation</h2>
-        <div class="collapsible-content">
-            <ul>
-                <li>Baccalauréat série A – 2019</li>
-                <li>Université d’Antananarivo – Bacc +2 (2024)</li>
-            </ul>
+    <section id="education">
+        <div class="section-title">
+            <h2>Mes Formations</h2>
+        </div>
+        <div class="education-grid">
+            <div class="education-card animate-on-scroll">
+                <div class="education-date">2023</div>
+                <h3 class="education-title">Formation Télévente B2B</h3>
+                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Ichtus IT, Antananarivo</div>
+                <div class="education-description">
+                    Spécialisation en techniques de vente croisée (cross-selling) pour les professionnels
+                </div>
+            </div>
+            
+            <div class="education-card animate-on-scroll" style="animation-delay: 0.2s">
+                <div class="education-date">2023</div>
+                <h3 class="education-title">Formation Télévente B2C</h3>
+                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Teleperformance, Antananarivo</div>
+                <div class="education-description">
+                    Techniques avancées de vente incitative (up-selling) et relation client
+                </div>
+            </div>
+            
+            <div class="education-card animate-on-scroll" style="animation-delay: 0.4s">
+                <div class="education-date">2022</div>
+                <h3 class="education-title">Formation Relation Client</h3>
+                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Webhelp / Teleperformance</div>
+                <div class="education-description">
+                    Gestion de la relation client et techniques de résolution de conflits
+                </div>
+            </div>
+            
+            <div class="education-card animate-on-scroll" style="animation-delay: 0.6s">
+                <div class="education-date">2019-2022</div>
+                <h3 class="education-title">Études de Droit</h3>
+                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Faculté de Droit, Ankatso</div>
+                <div class="education-description">
+                    2 années d'études universitaires en droit avec spécialisation en droit des affaires
+                </div>
+            </div>
+            
+            <div class="education-card animate-on-scroll" style="animation-delay: 0.8s">
+                <div class="education-date">2019</div>
+                <h3 class="education-title">Diplôme DELF B2</h3>
+                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Alliance Française, Toamasina</div>
+                <div class="education-description">
+                    Certification de niveau avancé en langue française
+                </div>
+            </div>
+            
+            <div class="education-card animate-on-scroll" style="animation-delay: 1s">
+                <div class="education-date">2019</div>
+                <h3 class="education-title">Baccalauréat</h3>
+                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Lycée de Fénerive-Est</div>
+                <div class="education-description">
+                    Obtention du baccalauréat avec mention
+                </div>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2 onclick="toggleContent(this)">Compétences</h2>
-        <div class="collapsible-content">
-            <ul>
-                <li><strong>Gestion de tâches :</strong> Organisation précise des priorités, planification hebdomadaire des actions et suivi des échéances avec rigueur.</li>
-                <li><strong>Résolution de problèmes :</strong> Approche proactive face aux imprévus, prise de décisions rapides et efficaces pour garantir la continuité du service.</li>
-                <li><strong>Orientation et suivi :</strong> Mise en place de tableaux de bord pour le suivi client, relances et fidélisation sur le long terme.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2 onclick="toggleContent(this)">Atouts</h2>
-        <div class="collapsible-content">
-            <ul>
-                <li>Grande disponibilité et flexibilité horaire, capacité à gérer des situations d’urgence avec calme et efficacité.</li>
-                <li>Habite à proximité, facilitant la réactivité et la ponctualité sans contrainte logistique.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2 onclick="toggleContent(this)">Skills</h2>
-        <div class="collapsible-content">
-            <ul>
-                <li><strong>Dynamique et ténacité :</strong> Motivation constante pour atteindre les objectifs fixés, engagement personnel et rigueur professionnelle.</li>
-                <li><strong>Sourire et sens de l’accueil :</strong> Qualité d’écoute, patience et aptitude à créer une ambiance conviviale et rassurante.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2 onclick="toggleContent(this)">Langues</h2>
-        <div class="collapsible-content">
-            <ul>
-                <li>Français : Courant</li>
-                <li>Anglais : Niveau intermédiaire, avec une capacité de compréhension écrite et orale satisfaisante.</li>
-            </ul>
+    <section id="contact">
+        <h2 class="contact-title">Contactez-moi</h2>
+        <p class="contact-subtitle">Disponible pour des opportunités en assistance administrative et commerciale</p>
+        
+        <div class="contact-links">
+            <a href="mailto:wellstodison@gmail.com" class="contact-link animate-on-scroll">
+                <i class="fas fa-envelope contact-icon"></i> wellstodison@gmail.com
+            </a>
+            <a href="tel:+261326412338" class="contact-link animate-on-scroll" style="animation-delay: 0.2s">
+                <i class="fas fa-phone contact-icon"></i> +261 32 64 123 38
+            </a>
+            <a href="https://linkedin.com/in/wells-todison" target="_blank" class="contact-link animate-on-scroll" style="animation-delay: 0.4s">
+                <i class="fab fa-linkedin contact-icon"></i> LinkedIn
+            </a>
+            <a href="https://goo.gl/maps/xyz" target="_blank" class="contact-link animate-on-scroll" style="animation-delay: 0.6s">
+                <i class="fas fa-map-marker-alt contact-icon"></i> Antananarivo, Madagascar
+            </a>
         </div>
     </section>
 
     <footer>
-        &copy; 2025 Soamasy Marie Anna Roddie – Portfolio réalisé avec soin.
+        <p>&copy; <span id="current-year"></span> Wells Yéé Doc Todison - Tous droits réservés</p>
+        <div class="social-links" style="margin-top: 1rem;">
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
     </footer>
 
     <script>
-        function toggleContent(element) {
-            const content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
+        // Animation au défilement
+        const animateElements = document.querySelectorAll('.animate-on-scroll, .timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    if (entry.target.classList.contains('timeline-item')) {
+                        entry.target.querySelector('.timeline-content').style.transform = 'rotateY(0)';
+                        entry.target.querySelector('.timeline-content').style.opacity = '1';
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(el => observer.observe(el));
+
+        // Smooth scrolling pour les liens de navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Année courante dans le footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Effet de particules
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles-js');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Position aléatoire
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                
+                // Taille aléatoire
+                const size = Math.random() * 5 + 2;
+                
+                // Durée d'animation aléatoire
+                const duration = Math.random() * 20 + 10;
+                
+                // Délai aléatoire
+                const delay = Math.random() * 5;
+                
+                particle.style.left = `${posX}%`;
+                particle.style.top = `${posY}%`;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.opacity = Math.random() * 0.5 + 0.1;
+                
+                particlesContainer.appendChild(particle);
             }
+        }
+
+        // Initialisation des particules
+        window.addEventListener('load', createParticles);
+
+        // Effet de vibration au survol des cartes
+        document.querySelectorAll('.skill-category, .education-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px) rotate(1deg)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+
+        // Animation de la timeline
+        function animateTimeline() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 300);
+            });
+        }
+
+        // Exécuter l'animation de la timeline lorsque la section est visible
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateTimeline();
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const experienceSection = document.querySelector('#experience');
+        if (experienceSection) {
+            timelineObserver.observe(experienceSection);
         }
     </script>
 </body>
