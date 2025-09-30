@@ -3,1082 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wells Yéé Doc Todison | Assistant Admin & Commercial</title>
+    <title>Expérience Professionnelle - DANA S TODISON</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #3a86ff;
-            --primary-dark: #2667cc;
-            --secondary: #8338ec;
-            --accent: #ff006e;
-            --dark: #1a1a2e;
-            --darker: #16213e;
-            --light: #e6f1ff;
-            --gray: #4a4e69;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background-color: var(--darker);
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Animations Keyframes */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateX(-100%); }
-            to { transform: translateX(0); }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes cardHover {
-            0% { transform: translateY(0) rotate(0); }
-            50% { transform: translateY(-5px) rotate(1deg); }
-            100% { transform: translateY(-3px) rotate(0.5deg); }
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
-            color: white;
-            padding: 4rem 0 6rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        }
-
-        header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(58, 134, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(131, 56, 236, 0.1) 0%, transparent 50%);
-        }
-
-        .header-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            animation: fadeIn 1s ease-out;
-        }
-
-        .profile-img {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(255,255,255,0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            margin-bottom: 1rem;
-            transition: var(--transition);
-            animation: bounceIn 1s ease, float 6s ease-in-out infinite;
-            filter: brightness(1.05) contrast(1.1);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(to right, var(--light), var(--primary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 700;
-        }
-
-        .title {
-            font-size: 1.2rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: var(--light);
-            opacity: 0.9;
-        }
-
-        .tagline {
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            font-size: 1rem;
-            opacity: 0.9;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--light);
-            font-size: 1.5rem;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-            transition: var(--transition);
-            opacity: 0.7;
-        }
-
-        .scroll-down:hover {
-            color: var(--accent);
-            opacity: 1;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: rgba(26, 26, 46, 0.9);
-            box-shadow: 0 5px 30px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-        }
-
-        .nav-link {
-            margin: 0 1.2rem;
-            padding: 0.5rem 0;
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            transition: var(--transition);
-            border-radius: 2px;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link:hover {
-            color: white;
-            opacity: 1;
-        }
-
-        /* Sections */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            display: inline-block;
-            font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            border-radius: 2px;
-        }
-
-        /* À Propos */
-        #about {
-            background-color: var(--dark);
-            border-radius: 15px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-            margin: -4rem auto 4rem;
-            position: relative;
-            z-index: 10;
-            padding: 4rem;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: rgba(255,255,255,0.8);
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .skill-category {
-            background-color: rgba(26, 26, 46, 0.7);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            border: 1px solid rgba(58, 134, 255, 0.1);
-            backdrop-filter: blur(5px);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border-color: rgba(58, 134, 255, 0.3);
-            animation: cardHover 1.5s ease-in-out infinite;
-        }
-
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-
-        .skill-category ul {
-            list-style: none;
-        }
-
-        .skill-category li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 1.8rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
-            color: rgba(255,255,255,0.7);
-        }
-
-        .skill-category li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-
-        /* Expérience - Nouveau Design */
-        .experience-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .experience-card {
-            background-color: var(--dark);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: var(--transition);
-            border: 1px solid rgba(255,255,255,0.05);
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .experience-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-        }
-
-        .experience-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .experience-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border-color: rgba(58, 134, 255, 0.3);
-        }
-
-        .experience-date {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            background-color: rgba(58, 134, 255, 0.1);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        .experience-company {
-            font-weight: 700;
-            color: white;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .experience-position {
-            color: var(--light);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .experience-description ul {
-            margin-top: 1rem;
-            padding-left: 1.2rem;
-        }
-
-        .experience-description li {
-            margin-bottom: 0.6rem;
-            line-height: 1.6;
-            position: relative;
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-        }
-
-        .experience-description li::before {
-            content: '•';
-            position: absolute;
-            left: -1rem;
-            color: var(--accent);
-            font-size: 1.2rem;
-            line-height: 1;
-        }
-
-        /* Formations */
-        #education {
-            background-color: var(--dark);
-            border-radius: 15px;
-            margin: 4rem auto;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .education-card {
-            background-color: rgba(26, 26, 46, 0.7);
-            border-radius: 12px;
-            padding: 1.8rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(131, 56, 236, 0.1);
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            transform: scale(0.95);
-        }
-
-        .education-card.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .education-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            border-color: rgba(131, 56, 236, 0.3);
-        }
-
-        .education-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--secondary), var(--accent));
-        }
-
-        .education-date {
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            background-color: rgba(131, 56, 236, 0.1);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-
-        .education-title {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-            color: white;
-        }
-
-        .education-institution {
-            color: var(--light);
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        /* Contact */
-        #contact {
-            background: linear-gradient(135deg, var(--dark), var(--darker));
-            color: white;
-            text-align: center;
-            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
-            padding: 8rem 2rem 6rem;
-            margin-top: 4rem;
-            position: relative;
-            overflow: hidden;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        #contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,100 L100,0 L100,100 Z" fill="rgba(255,255,255,0.02)"/></svg>');
-            background-size: 50% 50%;
-            background-repeat: no-repeat;
-            background-position: right bottom;
-            opacity: 0.3;
-        }
-
-        .contact-title {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .contact-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            border-radius: 2px;
-        }
-
-        .contact-subtitle {
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            opacity: 0.8;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            position: relative;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            position: relative;
-        }
-
-        .contact-link {
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            background-color: rgba(255,255,255,0.05);
-            transition: var(--transition);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
-            font-size: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .contact-link:hover {
-            background-color: rgba(255,255,255,0.1);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            border-color: var(--primary);
-        }
-
-        .contact-icon {
-            margin-right: 0.8rem;
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem;
-            background-color: var(--dark);
-            color: white;
-            font-size: 0.9rem;
-            position: relative;
-            border-top: 1px solid rgba(255,255,255,0.05);
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L50,100 Z" fill="rgba(255,255,255,0.02)"/></svg>');
-            background-size: 30%;
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0.3;
-        }
-
-        .social-links {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .social-icon {
-            color: white;
-            font-size: 1.2rem;
-            opacity: 0.7;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            color: var(--primary);
-            opacity: 1;
-            transform: translateY(-3px);
-        }
-
-        /* Animations */
-        @keyframes bounceIn {
-            from, 20%, 40%, 60%, 80%, to {
-                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-            }
-            0% {
-                opacity: 0;
-                transform: scale3d(0.3, 0.3, 0.3);
-            }
-            20% {
-                transform: scale3d(1.1, 1.1, 1.1);
-            }
-            40% {
-                transform: scale3d(0.9, 0.9, 0.9);
-            }
-            60% {
-                opacity: 1;
-                transform: scale3d(1.03, 1.03, 1.03);
-            }
-            80% {
-                transform: scale3d(0.97, 0.97, 0.97);
-            }
-            to {
-                opacity: 1;
-                transform: scale3d(1, 1, 1);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
-            40% {transform: translateY(-15px);}
-            60% {transform: translateY(-7px);}
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .experience-container, .education-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 3rem 0 5rem;
-                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .title {
-                font-size: 1.1rem;
-            }
-
-            .profile-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            #about {
-                padding: 3rem 1.5rem;
-                margin: -3rem auto 3rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            #contact {
-                clip-path: polygon(0 5%, 100% 0, 100% 100%, 0% 100%);
-                padding: 6rem 2rem 4rem;
-            }
-
-            .contact-title {
-                font-size: 2rem;
-            }
-
-            .contact-link {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-container {
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                padding: 0.8rem 1rem;
-            }
-
-            .nav-link {
-                margin: 0 0.5rem;
-                font-size: 0.8rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-
-            .experience-container, .education-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>WELLS Yéé Doc TODISON</h1>
-            <p class="title">Assistant Administratif & Commercial</p>
-            <p class="tagline">Expert en organisation, gestion de projets et relation client</p>
-            <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </header>
-    
-    <nav>
+    <!-- Navigation -->
+    <nav class="navbar">
         <div class="nav-container">
-            <a href="#about" class="nav-link">Profil</a>
-            <a href="#experience" class="nav-link">Expérience</a>
-            <a href="#education" class="nav-link">Formation</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <div class="nav-logo">
+                <a href="index.html">DANA S TODISON</a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="experience.html" class="nav-link active">Expérience</a>
+                <a href="competences.html" class="nav-link">Compétences</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
     </nav>
-    
-    <section id="about">
-        <div class="section-title">
-            <h2>A propos de moi</h2>
+
+    <!-- Experience Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Expérience Professionnelle</h1>
+            <p>Mon parcours et mes réalisations dans le domaine de la saisie de données</p>
         </div>
-        <div class="about-content animate-on-scroll">
-            <div class="about-text">
-                <p>Je suis un <strong>professionnel polyvalent</strong> spécialisé dans l'administration et le commerce, avec une solide expérience en gestion de projets, relation client et optimisation des processus. Mon approche allie rigueur organisationnelle et sens du commerce dans un environnement digital.</p>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="experience">
+        <div class="container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>ManampyAnao</h3>
+                        <h4>Agente de saisie des actes d'état civil en ligne</h4>
+                        <ul>
+                            <li>Collecte des actes de naissance, mariage et décès sous format papier et numérisé</li>
+                            <li>Vérification de l'état des documents (propres, usés, endommagés, illisibles par endroits)</li>
+                            <li>Saisie et enregistrement des données dans les bases en ligne</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-glow"></div>
+                </div>
                 
-                <p>Passionné par l'efficacité opérationnelle, je maîtrise les outils administratifs modernes et les techniques commerciales avancées pour apporter une réelle valeur ajoutée aux entreprises.</p>
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Multi-services V&C</h3>
+                        <h4>Assistante de saisie polyvalente</h4>
+                        <ul>
+                            <li>Saisie d'informations personnelles (identité, adresse, contacts)</li>
+                            <li>Gestion des dossiers du personnel (contrats, absences, congés, évaluations)</li>
+                            <li>Traitement des données de recrutement et candidature</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-glow"></div>
+                </div>
                 
-                <div class="skills-container">
-                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.1s">
-                        <h3><i class="fas fa-file-contract"></i> Administratif</h3>
+                <div class="timeline-item">
+                    <div class="timeline-date">Mars 2022</div>
+                    <div class="timeline-content">
+                        <h3>ManampyAnao</h3>
+                        <h4>Saisie et enregistrement des données scolaires</h4>
                         <ul>
-                            <li>Gestion de contrats & documents</li>
-                            <li>Suivi et rapprochement bancaire</li>
-                            <li>Organisation d'événements</li>
-                            <li>Reporting et analyse de données</li>
+                            <li>Transcription fidèle des informations dans la base de données scolaires en ligne</li>
+                            <li>Utilisation des formulaires numériques, menus déroulants et champs obligatoires</li>
+                            <li>Garantie de la cohérence et de l'exactitude des données saisies</li>
                         </ul>
                     </div>
-                    
-                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.3s">
-                        <h3><i class="fas fa-chart-line"></i> Commercial</h3>
-                        <ul>
-                            <li>Prospection B2B/B2C</li>
-                            <li>Négociation et closing</li>
-                            <li>Gestion CRM</li>
-                            <li>Relation client</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.5s">
-                        <h3><i class="fas fa-laptop-code"></i> Digital</h3>
-                        <ul>
-                            <li>Suite Office 365</li>
-                            <li>Google Workspace</li>
-                            <li>Time Doctor</li>
-                            <li>Outils collaboratifs</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="skill-category animate-on-scroll" style="animation-delay: 0.7s">
-                        <h3><i class="fas fa-language"></i> Langues</h3>
-                        <ul>
-                            <li>Français : Courant</li>
-                            <li>Anglais : Professionnel</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="experience">
-        <div class="section-title">
-            <h2>Mon Parcours Professionnel</h2>
-        </div>
-        <div class="experience-container">
-            <div class="experience-card animate-on-scroll">
-                <span class="experience-date">Mars 2025 - Juillet 2025</span>
-                <h3 class="experience-company">Mada Marketing</h3>
-                <div class="experience-position"><i class="fas fa-briefcase"></i> Conseiller en Immigration</div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Gestion des appels entrants/sortants avec taux de conversion +20%</li>
-                        <li>Présentation des programmes d'immigration adaptés</li>
-                        <li>Collaboration avec l'équipe juridique</li>
-                        <li>Suivi personnalisé des dossiers (-15% d'abandons)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="experience-card animate-on-scroll" style="animation-delay: 0.2s">
-                <span class="experience-date">Oct 2024 - Aujourd'hui</span>
-                <h3 class="experience-company">Freelance Agro-business</h3>
-                <div class="experience-position"><i class="fas fa-briefcase"></i> Commercial Indépendant</div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Prospection et négociation internationale B2B</li>
-                        <li>Vente de produits locaux à l'export (CA: 10k USD/mois)</li>
-                        <li>Gestion autonome du cycle de vente</li>
-                        <li>Développement réseau partenaires internationaux</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="experience-card animate-on-scroll" style="animation-delay: 0.4s">
-                <span class="experience-date">Sept - Oct 2024</span>
-                <h3 class="experience-company">Eufonie</h3>
-                <div class="experience-position"><i class="fas fa-briefcase"></i> Télévendeur</div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Prospection téléphonique B2B/B2C (40 leads/mois)</li>
-                        <li>Création portefeuille commercial</li>
-                        <li>Taux de conversion de 10%</li>
-                        <li>Gestion des objections</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="experience-card animate-on-scroll" style="animation-delay: 0.6s">
-                <span class="experience-date">Déc 2022 - Avr 2023</span>
-                <h3 class="experience-company">Teleperformance</h3>
-                <div class="experience-position"><i class="fas fa-briefcase"></i> Télévendeur B2C</div>
-                <div class="experience-description">
-                    <ul>
-                        <li>Vente de forfaits mobiles (120% des objectifs)</li>
-                        <li>Techniques up-selling/cross-selling</li>
-                        <li>30% de ventes additionnelles</li>
-                        <li>Fidélisation client (-10% réclamations)</li>
-                    </ul>
+                    <div class="timeline-glow"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education">
-        <div class="section-title">
-            <h2>Mes Formations</h2>
-        </div>
-        <div class="education-grid">
-            <div class="education-card animate-on-scroll">
-                <div class="education-date">2023</div>
-                <h3 class="education-title">Télévente B2B</h3>
-                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Ichtus IT, Antananarivo</div>
-            </div>
-            
-            <div class="education-card animate-on-scroll" style="animation-delay: 0.2s">
-                <div class="education-date">2023</div>
-                <h3 class="education-title">Télévente B2C</h3>
-                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Teleperformance</div>
-            </div>
-            
-            <div class="education-card animate-on-scroll" style="animation-delay: 0.4s">
-                <div class="education-date">2022</div>
-                <h3 class="education-title">Relation Client</h3>
-                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Webhelp / Teleperformance</div>
-            </div>
-            
-            <div class="education-card animate-on-scroll" style="animation-delay: 0.6s">
-                <div class="education-date">2019-2022</div>
-                <h3 class="education-title">Études de Droit</h3>
-                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Faculté de Droit, Ankatso</div>
-            </div>
-            
-            <div class="education-card animate-on-scroll" style="animation-delay: 0.8s">
-                <div class="education-date">2019</div>
-                <h3 class="education-title">DELF B2</h3>
-                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Alliance Française</div>
-            </div>
-            
-            <div class="education-card animate-on-scroll" style="animation-delay: 1s">
-                <div class="education-date">2019</div>
-                <h3 class="education-title">Baccalauréat</h3>
-                <div class="education-institution"><i class="fas fa-graduation-cap"></i> Lycée de Fénerive-Est</div>
+    <!-- Education Section -->
+    <section class="education">
+        <div class="container">
+            <h2 class="section-title">Formation</h2>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-date">2024 - 2025</div>
+                    <h3>Master 1 en Sciences de l'Éducation/Administration et Service Scolaire</h3>
+                    <p>École Normale Supérieure/ Université de Toamasina</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-date">2023 - 2024</div>
+                    <h3>Licence professionnelle en Administration et Législation Scolaire</h3>
+                    <p>ENS/ Université de Toamasina</p>
+                </div>
+                <div class="education-card">
+                    <div class="education-date">2012</div>
+                    <h3>Baccalauréat / enseignement général</h3>
+                    <p>Lycée Fénérive-Est</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h2 class="contact-title">Contactez-moi</h2>
-        <p class="contact-subtitle">Disponible de suite pour des opportunités en assistance administrative et commerciale</p>
-        <div class="contact-links">
-            <a href="mailto:wellstodison@gmail.com" class="contact-link animate-on-scroll">
-                <i class="fas fa-envelope contact-icon"></i> wellstodison@gmail.com
-            </a>
-            <a href="tel:+261326412338" class="contact-link animate-on-scroll" style="animation-delay: 0.2s">
-                <i class="fas fa-phone contact-icon"></i> +261 32 64 123 38
-            </a>
-            <a href="https://www.linkedin.com/in/wells-todison-473151259/" target="_blank" class="contact-link animate-on-scroll" style="animation-delay: 0.4s">
-                <i class="fab fa-linkedin contact-icon"></i> LinkedIn
-            </a>
-        </div>
-    </section>
-    <section>
-        <div>
-            ----------------------------------------
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Intéressé par mon profil?</h2>
+            <p>N'hésitez pas à me contacter pour discuter de vos projets de saisie de données</p>
+            <a href="contact.html" class="btn btn-primary">Me Contacter</a>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Wells Yéé Doc Todison - Tous droits réservés</p>
-        <div class="social-links">
-            <a href="https://x.com/WTodison" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/todisonwells/" class="social-icon"><i class="fab fa-instagram"></i></a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>DANA S TODISON</h3>
+                    <p>Opératrice de saisie professionnelle</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p><i class="fas fa-phone"></i> +261 321437231</p>
+                    <p><i class="fas fa-envelope"></i> todisond@gmail.com</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="experience.html">Expérience</a>
+                    <a href="competences.html">Compétences</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 DANA S TODISON. Tous droits réservés.</p>
+            </div>
         </div>
     </footer>
 
-
-    <script>
-        // Animation au défilement
-        const animateElements = document.querySelectorAll('.animate-on-scroll, .timeline-item');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    if (entry.target.classList.contains('timeline-item')) {
-                        entry.target.querySelector('.timeline-content').style.transform = 'rotateY(0)';
-                        entry.target.querySelector('.timeline-content').style.opacity = '1';
-                    }
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        animateElements.forEach(el => observer.observe(el));
-
-        // Smooth scrolling pour les liens de navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Année courante dans le footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Effet de particules
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles-js');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Position aléatoire
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                
-                // Taille aléatoire
-                const size = Math.random() * 5 + 2;
-                
-                // Durée d'animation aléatoire
-                const duration = Math.random() * 20 + 10;
-                
-                // Délai aléatoire
-                const delay = Math.random() * 5;
-                
-                particle.style.left = `${posX}%`;
-                particle.style.top = `${posY}%`;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.opacity = Math.random() * 0.5 + 0.1;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Initialisation des particules
-        window.addEventListener('load', createParticles);
-
-        // Effet de vibration au survol des cartes
-        document.querySelectorAll('.skill-category, .education-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px) rotate(1deg)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0) rotate(0)';
-            });
-        });
-
-        // Animation de la timeline
-        function animateTimeline() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.add('visible');
-                }, index * 300);
-            });
-        }
-
-        // Exécuter l'animation de la timeline lorsque la section est visible
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateTimeline();
-                    timelineObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        const experienceSection = document.querySelector('#experience');
-        if (experienceSection) {
-            timelineObserver.observe(experienceSection);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
